@@ -1,0 +1,38 @@
+{%- liquid
+  assign title = section.settings.title
+  assign description = section.settings.description
+-%}
+
+
+<div>
+  <h1>{{ title }}</h1>
+  <p>{{ description }}</p>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Test-Collection",
+    "tag": "section",
+    "class": "",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Test Collection"
+      }, {
+        "type": "text",
+        "id": "description",
+        "label": "Description",
+        "default": "This is a test collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Test-Collection",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}
